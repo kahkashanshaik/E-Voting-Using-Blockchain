@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BlockChain E-Voting</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" type="image/png"  href="/img/vote_text.png">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/toastr.min.css">
+      <style type="text/css">
+        body{
+      background: url('/img/bg.jpg');
+      -webkit-background-size: cover;
+           -moz-background-size: cover;
+           -o-background-size: cover;
+           background-size: cover;
+        }
+      </style>
+</head>
+<body>
+    <div class="container-fluid text-xs">
+      <div class="row">
+        <div class="col-lg-12 ">
+          <img src="/img/vote_text.png" alt="BlockChain E-Voting" class="img-responsive" width="150" height="150">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+         <div class="card elevation-5">
+
+          <div class="card-body login-card-body opacity-0.6" style="background: #ffffff;">
+            <p class="login-box-msg text-red font-weight-bolder m-2">Register To Vote</p>
+            <form action="/auth/voterRegister" method="POST">
+            <div class="card-outline card-danger">
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                {{# if errors }}
+                    {{# each errors }}
+                         <div class="alert alert-danger alert-dismissible text-xs mt-4">
+                          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            {{this.msg}}</div>
+                    {{/each}}
+                {{/if}}
+                {{# if message }}
+                         <div class="alert alert-danger alert-dismissible text-xs mt-4">
+                          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            {{message}}</div>
+                {{/if}}
+
+                </div>
+                <div class="col-md-3"></div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <div class="form-group row">
+                     <label for="inputPassword3" class="col-sm-3 col-form-label text-xs">Voter-ID <span class="text-danger">*</span></label>
+                     <div class="col-sm-9">
+                        <input type="text" class="form-control" name="voter_id" id="voter_id" 
+                           placeholder="Enter Voter ID Number"  required="" value="{{ formdata.voter_id }}">
+                     </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                     <label for="inputPassword3" class="col-sm-3 col-form-label text-xs">Name <span class="text-danger">*</span></label>
+                     <div class="col-sm-9">
+                        <input type="text" class="form-control" name="name" id="name" 
+                           placeholder="Enter Name"  required="" value="{{ formdata.name }}">
+                     </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                     <label for="inputPassword3" class="col-sm-3 col-form-label text-xs">Email <span class="text-danger">*</span></label>
+                     <div class="col-sm-9">
+                        <input type="email" class="form-control" name="email" id="email" 
+                           placeholder="Enter Email Address"  required="" value="{{ formdata.email }}">
+                     </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                     <label for="inputPassword3" class="col-sm-3 col-form-label text-xs">Phone No. <span class="text-danger">*</span></label>
+                     <div class="col-sm-9">
+                        <input type="number" class="form-control" name="phone" id="phone" placeholder="Enter Mobile No"  required="" value="{{ formdata.phone }}">
+                     </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                     <label for="inputPassword3" class="col-sm-3 col-form-label text-xs">Adhar No. <span class="text-danger">*</span></label>
+                     <div class="col-sm-9">
+                        <input type="number" class="form-control" name="adhar_no" id="adhar_no" 
+                           placeholder="Enter Name"  required="" value="{{ formdata.adhar_no }}">
+                     </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                     <label for="inputPassword3" class="col-sm-3 col-form-label text-xs">Password <span class="text-danger">*</span></label>
+                     <div class="col-sm-9">
+                        <input type="password" class="form-control" name="password" id="password" 
+                           placeholder="Enter Your Password"  required="">
+                     </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                     <label for="inputPassword3" class="col-sm-3 col-form-label text-xs">Confirm Password <span class="text-danger">*</span></label>
+                     <div class="col-sm-9">
+                        <input type="password" class="form-control" name="passwordConfirmed" id="passwordConfirmed" 
+                           placeholder="Enter Your Password"  required="">
+                     </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                     <label for="inputPassword3" class="col-sm-3 col-form-label text-xs">Address</label>
+                     <div class="col-sm-9">
+                        <textarea  class="form-control" name="address" id="address" 
+                           placeholder="Enter Your Address Details">{{ formdata.address }}</textarea>
+                     </div>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="row">
+                 <div class="col-lg-12">
+                    <button type="submit" class="btn btn-primary float-right text-xs">Register Now</button>
+                    <a href="/voterLogin" style="float:left;color: red;text-decoration: underline;" class="text-sm">Login</a>
+                 </div>
+              </div>
+                
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2"></div>
+      
+    </div> 
+     
+
+  </div>
+  <script type="text/javascript"  src="/js/jquery.min.js"></script>
+  <script type="text/javascript"  src="/js/bootstrap.min.js"></script>
+  <script type="text/javascript"  src="/js/toastr.min.js"></script>
+</body>
+</html>

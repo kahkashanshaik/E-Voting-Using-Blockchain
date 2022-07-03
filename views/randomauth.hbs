@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BlockChain E-Voting</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png"  href="/img/vote_text.png">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/fontawesome-free/css/all.min.css">
+        <style type="text/css">
+            #login-bg{
+            background: url('/img/bg.jpg');
+            -webkit-background-size: cover;
+             -moz-background-size: cover;
+             -o-background-size: cover;
+             background-size: cover;
+            }
+        </style>
+</head>
+<body class="hold-transition login-page elevation-5" id="login-bg">
+ <div class="login-box" style="background-color: #cc8383; padding: 0px; margin: 0px; border-radius: 20px">
+         <div class="login-logo p-0 mt-2">
+            <a href="#" ><img src="/img/voting_image.png" alt="BlockChain E-Voting" style="width: 100px; height: 100px;" class="brand-image center img-fluid"
+               ></a>
+         </div>
+         <!-- /.login-logo -->
+         <div class="card">
+            <div class="card-body login-card-body opacity-0.6" style="background: #cc8383;">
+                <p class="login-box-msg text-red font-weight-bolder">Voter Authentication</p>
+                <form action="/auth/voterLogin" method="POST">
+                  <div class="input-group mb-3" id="auth_email" style="display:none;">
+                     <input type="email" class="form-control" placeholder="Enter Your Email" name="auth_email" autocomplete="off" required="">
+                     <div class="input-group-append">
+                     </div>
+                  </div>
+                  <div class="input-group mb-3" style="display: none;" id="auth_name">
+                     <input type="text" class="form-control" placeholder="Enter Your Name" name="auth_name"  autocomplete="off" required="">
+                     <div class="input-group-append">
+                     </div>
+                  </div>
+
+                  <div class="input-group mb-3" style="display: none;" id="auth_gender">
+                     <select class="form-control" name="auth_gender" >
+                         <option value=""> -- Select Gender --</option>
+                         <option value="male">Male</option>
+                         <option value="female">Female</option>
+                         <option value="other">Other</option>
+                     </select>
+                     <div class="input-group-append">
+                     </div>
+                  </div>
+
+                  <div class="input-group mb-3" style="display: none;" id="auth_marriedstatus">
+                     <select class="form-control" name="auth_marriedstatus" >
+                         <option value=""> -- Select Married Status --</option>
+                         <option value="sinle">Single</option>
+                         <option value="married">Married</option>
+                         <option value="unmarried">unMarried</option>
+                         <option value="Other">Other</option>
+                     </select>
+                     <div class="input-group-append">
+                     </div>
+                  </div>
+
+                  <div class="input-group mb-3" style="display: none;" id="auth_marriedstatus">
+                     <select class="form-control" name="auth_marriedstatus" >
+                         <option value=""> -- Select Married Status --</option>
+                         <option value="sinle">Single</option>
+                         <option value="married">Married</option>
+                         <option value="unmarried">unMarried</option>
+                         <option value="Other">Other</option>
+                     </select>
+                     <div class="input-group-append">
+                     </div>
+                  </div>
+                 
+                  <div class="row">
+                     <div class="col-12 text-center">
+                        <button type="button" class="btn-danger btn-md text-center p-3" style="border: none; border-radius: 40%;">
+                            <i class="fas fa-chevron-right"></i></button>
+                        <button type="submit" class="btn btn-danger float-right" style="display:none;">Submit</button>
+                     </div>
+                  </div>
+                    {{#if message }}
+                        <div class="alert alert-danger alert-dismissible text-xs mt-4">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            {{message}}</div>
+                    {{/if}}
+              </form>
+            </div>
+         </div>
+         <div class="row p-3">
+          <div class="col-lg-12 text-center">
+            <h6 class="text-white"> E-Voting System </h6>
+          </div>
+         </div>
+      </div>
+
+
+       
+
+
+</body>
+<script type="text/javascript"  src="/js/jquery.min.js"></script>
+<script type="text/javascript"  src="/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    var question_arr = { 1: "#auth_email", 2: "#auth_name", 3: "#auth_name", 4: "#auth_gender", 5: "#auth_marriedstatus", 6: "auth_marriedstatus"}
+    var rand_num = Math.floor((Math.random() * 6) + 1);
+    for (var i = 5; i > 0; i--) {
+        var id  = question_arr[i];
+        $(id).show('slow');
+    }
+    
+</script>
+</html>

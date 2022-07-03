@@ -1,0 +1,44 @@
+{
+  "name": "evoting-blockchain",
+  "version": "1.0.0",
+  "description": "E Voting Using Blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kahkashanshaik"
+  },
+  "keywords": [
+    "blockchain",
+    "e-voting",
+    "e-votingblockchain"
+  ],
+  "author": "Kahkashan Shaik",
+  "license": "ISC",
+  "devDependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "child_process": "^1.0.2",
+    "cookie-parser": "^1.4.6",
+    "cookieparser": "^0.1.0",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "express-validator": "5.3.1",
+    "fast-two-sms": "^3.0.0",
+    "fh": "^0.12.1-7",
+    "flash": "^1.1.0",
+    "fs": "^0.0.1-security",
+    "hbs": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "node-datetime": "^2.1.2",
+    "nodemailer": "^6.7.6",
+    "nodemon": "^2.0.18",
+    "url": "^0.11.0"
+  }
+}

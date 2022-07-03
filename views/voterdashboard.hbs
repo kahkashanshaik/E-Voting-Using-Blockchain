@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>BlockChain E-Voting</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="icon" type="image/png"  href="/img/vote_text.png">
+      <link rel="stylesheet" href="/css/bootstrap.css">
+      <link rel="stylesheet" href="/css/fontawesome-free/css/all.min.css">
+   </head>
+   <body class="hold-transition sidebar-mini layout-fixed">
+      <div class="wrapper">
+         <div class="container-fluid">
+            <section class="content  bg-dark m-3">
+               <div class="row">
+                  <div class="col-lg-12">
+                     <a href="/voterlogout" class="text-white  float-right m-3"><i class="fa fa-power-off mr-2"></i>Logout</a>
+                  </div>
+               </div>
+               <div class="row p-5 ">
+                  <div class="col-lg-12 text-center">
+                     <h1 class="elevation-5 p-2">E-Voting using Blockchain</h1>
+                     <h4 class="mt-4">Welcome to our portal</h4>
+                  </div>
+               </div>
+            </section>
+            <section class="content m-3">
+               <!-- When election is are yet to strat -->
+               <div class="row" id="election-yetto-start" style="display: none;">
+                  <div class="col-lg-12">
+                     <div class="alert alert-warning" role="alert">
+                        Elections are yet to start!<br/><br/>
+                        Voting can be conducted only after the election have started!<br/>
+                        Please visit back after sometime and check.
+                     </div>
+                  </div>
+               </div>
+               <!-- When Perosn Voted Successfully -->
+               <div class="row" id="vote-success" style="display: none">
+                  <div class="col-lg-12">
+                     <div class="alert alert-success" role="alert">
+                        You have voted Successfully<br/><br/>
+                        Thank you for taking participate in this Election!<br/>
+                        Please Wait for Results.
+                     </div>
+                  </div>
+               </div>
+               <!-- Show Candidates Profiles  -->
+               <div class="row mt-5" id="candidatesProfiles" style="display: none">
+               </div>
+               <!-- It shows Candidates for voting -->
+               <div class="row mt-5" id="content" style="display: none">
+                  <div class="col-md-3">
+                  </div>
+                  <div class="col-md-6">
+                     <form onSubmit="App.castVote(); return false;" id="voteform">
+                        <label for="candidatesSelect" class="text-center">Select Candidate</label>
+                        <select class="form-control" id="candidatesSelect" style="width: 100%" required="">
+                        
+                           
+                        </select>
+                        <button type="submit" class="btn btn-success mt-3 w-100">Vote</button>
+                     </form>
+                  </div>
+                  <div class="col-md-3">
+                  </div>
+               </div>
+               <!-- It display account address -->
+               <div class="row mt-5">
+                  <div class="col-lg-12">
+                     <div class="alert alert-light" role="alert">
+                        <h6 id="accountAddress" class="text-center"></h6>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+      </div>
+   </body>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script type="text/javascript"  src="/js/bootstrap.min.js"></script>
+   <script type="text/javascript"  src="/js/web3.min.js"></script>
+   <script type="text/javascript"  src="/js/truffle-contract.js"></script>
+   <script type="text/javascript"  src="/js/app.js"></script>
+</html>
